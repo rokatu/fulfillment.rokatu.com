@@ -14,7 +14,7 @@
       iframe {
         margin: 0px;
         padding: 0px;
-        height: 100%;
+        height: 0px;
         border: none;
       }
 
@@ -26,9 +26,16 @@
         overflow-x: hidden;
       }
     </style>
+    <script>
+      function load() {
+        var headerHeight = 60;
+        var container = document.getElementsByTagName('iframe')[0];
+        container.style.height = "" + (window.innerHeight + headerHeight) + "px";
+        container.style.marginTop = "-" + headerHeight + "px";
+      }
+    </script>
   </head>
-
-  <body>
+  <body onload="load()">
     <iframe src="https://docs.google.com/document/d/e/2PACX-1vR8L9iFv-6H4lAOpF8TekPVOocaTUUDeVcAYbCIh6sk0lUokRKu-YqjLRY5d5xejnMyhuR6XRZFyU4X/pub"
       frameborder="0"
       marginheight="0"
